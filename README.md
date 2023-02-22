@@ -1,1 +1,1 @@
-# resume-tgbot-ganerator
+# resume-tgbot-generator
