@@ -15,13 +15,27 @@ dp = Dispatcher(bot)
 # Обработчик команды /start
 @dp.message_handler(commands=["start"])
 async def cmd_start(message: types.Message):
-    await message.answer("Привет! Я бот, который может отвечать на твои сообщения.")
+    await message.answer("Привет, я напишу твоё резюме, только лишь расскажи о себе)")
 
-# Обработчик текстовых сообщений
+
+@dp.message_handler(commands=["get_resume"])
+async def resume(message: types.Message):
+    await message.answer("Здесь будет резюме")
+
+
+@dp.message_handler(commands=["edit_info"])
+async def resume(message: types.Message):
+    await message.answer("Здесь можно изменить информацию о себе")
+
+
+@dp.message_handler(commands=["profile"])
+async def resume(message: types.Message):
+    await message.answer("Здесь можно увидеть информацию о себе")
+
 @dp.message_handler()
-async def echo(message: types.Message):
-    # Отправляем эхо-сообщение
-    await message.answer(f"Ты написал: {message.text}")
+async def main_dialog(message: types.Message):
+    await message.answer("Мне нужны команды...")
+
 
 # Запускаем бота
 if __name__ == "__main__":
