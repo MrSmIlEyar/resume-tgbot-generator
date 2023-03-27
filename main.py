@@ -1,5 +1,6 @@
 import logging
 
+import docx
 import requests
 from aiogram import Bot, Dispatcher, types
 from aiogram.utils import executor
@@ -116,3 +117,13 @@ def get_user_info(user: types.User):
 # Запускаем бота
 if __name__ == "__main__":
     executor.start_polling(dp, skip_updates=True)
+
+def creatingadocx(x):
+    doc = docx.Document()
+    doc.add_heading('Резюме', 0)
+    par1 = doc.add_paragraph(x)
+    return doc.save('resume.docx')
+# f = creatingadocx(x)
+
+
+
