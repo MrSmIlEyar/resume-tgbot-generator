@@ -9,8 +9,8 @@ import os
 import emoji
 
 import dbConfig
-import signup
-import markup
+from firebase import signup
+from backend import markup
 
 # Задаем уровень логов
 logging.basicConfig(level=logging.INFO)
